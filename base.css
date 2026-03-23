@@ -32,7 +32,8 @@ a {
 
 /* === HEADER & HERO === */
 header {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    /* La magnifique photo du marathon en fond avec le dégradé pour lire le texte */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('image1.jpg') center 25% / cover no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -69,16 +70,17 @@ nav {
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     text-transform: uppercase;
     margin-bottom: 20px;
     line-height: 1.2;
     margin-top: 40px;
+    font-weight: 800;
 }
 
 .hero-subtitle {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
-    color: var(--text-muted);
+    color: var(--text-light);
     margin-bottom: 40px;
 }
 
@@ -132,6 +134,7 @@ h2 span {
     background-color: var(--bg-card);
     padding: 30px;
     border-radius: 10px;
+    flex: 1;
 }
 
 .about-text ul {
@@ -152,6 +155,24 @@ h2 span {
     top: 0;
 }
 
+/* Style de la nouvelle image de Hugo */
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 3px solid var(--primary-color);
+    object-fit: cover;
+}
+
+/* Responsive pour mettre l'image et le texte côte à côte sur PC */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
 /* === FORMULES (PRIX) === */
 .pricing-grid {
     display: grid;
@@ -167,8 +188,6 @@ h2 span {
     text-align: center;
     border: 1px solid #333;
     transition: transform 0.3s, border-color 0.3s;
-    
-    /* FLEXBOX POUR ALIGNER LES BOUTONS EN BAS */
     display: flex;
     flex-direction: column;
     height: 100%; 
@@ -202,7 +221,7 @@ h2 span {
     list-style: none;
     margin-bottom: 30px;
     text-align: left;
-    flex-grow: 1; /* Pousse le bouton vers le bas */
+    flex-grow: 1;
 }
 
 .card ul li {
@@ -222,7 +241,7 @@ h2 span {
 }
 
 .card .btn {
-    margin-top: auto; /* Aligne le bouton tout en bas */
+    margin-top: auto; 
     width: 100%;
     display: block; 
 }
